@@ -32,10 +32,15 @@ install curl
 
 Advertise a device as an exit node
 `sudo tailscale set --advertise-exit-node`
+
 Enable IP forwarding
+
 `echo 'net.ipv4.ip_forward = 1' | sudo tee -a /etc/sysctl.d/99-tailscale.conf`
+
 `echo 'net.ipv6.conf.all.forwarding = 1' | sudo tee -a /etc/sysctl.d/99-tailscale.conf`
+
 `sudo sysctl -p /etc/sysctl.d/99-tailscale.conf`
+
 Advertise subnet routes
 
 After you enable IP forwarding, run tailscale set with the --advertise-routes flag. It accepts a comma-separated list of subnet routes. Make sure to replace the subnets in the example above with the correct ones for your network. All platforms except Apple TV support both IPv4 and IPv6 subnets. Apple TV only supports IPv4 subnets.

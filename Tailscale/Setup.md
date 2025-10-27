@@ -16,6 +16,8 @@ https://youtu.be/tqvvZhGrciQ
 
 https://docs.docker.com/reference/compose-file/services/#network_mode
 
+https://tailscale.com/kb/1282/docker#code-examples
+
 # lxc configuration
 
 after install go to proxmox root shell

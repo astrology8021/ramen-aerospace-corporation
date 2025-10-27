@@ -49,7 +49,8 @@ Enable IP forwarding
 [Advertise subnet routes](https://tailscale.com/kb/1019/subnets?tab=linux#advertise-subnet-routes)
 
 After you enable IP forwarding, run tailscale set with the --advertise-routes flag. It accepts a comma-separated list of subnet routes. Make sure to replace the subnets in the example above with the correct ones for your network. All platforms except Apple TV support both IPv4 and IPv6 subnets. Apple TV only supports IPv4 subnets.
-sudo tailscale set --advertise-routes=10.66.66.0/24
+
+`sudo tailscale set --advertise-routes=10.66.66.0/24`
 
 ## disable exit node
 

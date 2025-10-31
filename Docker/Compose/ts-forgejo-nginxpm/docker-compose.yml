@@ -1,0 +1,89 @@
+networks:
+  forgejo:
+    external: false
+
+services:
+  tailscale:
+    image: tailscale/tailscale:latest
+    container_name: tailscale
+    hostname: machine-ts
+    network_mode: "host"
+    environment:
+      - TS_AUTHKEY=${TS_AUTHKEY}
+      - TS_EXTRA_ARGS=${TS_EXTRA_ARGS}
+      - TS_STATE_DIR=/var/lib/tailscale
+      - TS_USERSPACE=true
+      - TS_DEBUG_FIREWALL_MODE=auto
+      - TS_ROUTES=${TS_ROUTES}
+    volumes:
+      - ${PWD}/tailscale/state:/var/lib/tailscale
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    cap_add:
+      - net_admin
+    restart: unless-stopped
+
+  server:
+    image: codeberg.org/forgejo/forgejo:13
+    container_name: forgejo
+    environment:
+      - USER_UID=${USER_UID}
+      - USER_GID=${USER_GID}
+      - FORGEJO__database__DB_TYPE=postgres
+      - FORGEJO__database__HOST=db:5432
+      - FORGEJO__database__NAME=forgejo
+      - FORGEJO__database__USER=forgejo
+      - FORGEJO__database__PASSWD=${FORGEJO__database__PASSWD}
+    restart: always
+    networks:
+      - forgejo
+    volumes:
+      - ./forgejo:/data
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
+    ports:
+      - "3001:3000"
+      - "222:22"
+    depends_on:
+      - db
+
+  db:
+    image: postgres:14
+    restart: always
+    environment:
+      - POSTGRES_USER=forgejo
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+      - POSTGRES_DB=forgejo
+    networks:
+      - forgejo
+    volumes:
+      - ./postgres:/var/lib/postgresql/data
+
+  nginx_proxy_manager:
+    image: "jc21/nginx-proxy-manager:latest"
+    container_name: nginx_proxy_manager
+    restart: always
+    network_mode: "host"
+    ports:
+      - 80:80 # HTTP
+      - 443:443 # HTTPS
+      - 81:81 # Admin Panel
+    volumes:
+      - ./nginx/data/npm_data:/data
+      - ./nginx/data/npm_letsencrypt:/etc/letsencrypt
+      - ./nginx/data/npm_logs:/var/log/nginx
+    environment:
+      DB_SQLITE_FILE: "/data/database.sqlite" # Using SQLite instead of MySQL for simplicity
+      INITIAL_ADMIN_EMAIL: admin@example.com
+      INITIAL_ADMIN_PASSWORD: changeme
+
+  goaccess:
+    image: justsky/goaccess-for-nginxproxymanager:latest
+    container_name: goaccess
+    restart: always
+    environment:
+      - TZ=${TZ}
+    ports:
+      - 7880:7880
+    volumes:
+      - ./nginx/data/npm_data/logs:/opt/log

@@ -15,7 +15,7 @@ search for third party drivers = enable
 set disk as lvm group = disable
 install openssh server = enable
 
-# Install on Proxmox VM
+# Install on Proxmox VM & Raspberry Pi
 
 1. reboot from proxmox menu
 2. ssh into the docker container doc

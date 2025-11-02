@@ -20,14 +20,19 @@ install openssh server = enable
 1. reboot from proxmox menu
 2. ssh into the docker container doc
 3. update via command
-   `sudo apt update`
+
+`sudo apt update`
+
 4. then update
-   `sudo apt upgrade`
-5. install then add docker to sudo group
-   `curl -sSL https://get.docker.com | sh`
-   `sudo usermod -aG docker $USER`
+
+`sudo apt upgrade` 5. install then add docker to sudo group
+`curl -sSL https://get.docker.com | sh`
+
+`sudo usermod -aG docker $USER`
+
 6. logout
-   `sudo reboot`
+
+`sudo reboot`
 
 7. add docker to group
    `newgrp docker`

@@ -21,7 +21,7 @@ install openssh server = enable
 2. ssh into the docker container doc
 3. update via command
 
-`sudo apt update`
+   `sudo apt update`
 
 4. then update
 

@@ -25,18 +25,23 @@ install openssh server = enable
 
 4. then update
 
-`sudo apt upgrade` 5. install then add docker to sudo group
-`curl -sSL https://get.docker.com | sh`
+   `sudo apt upgrade`
 
-`sudo usermod -aG docker $USER`
+5. install then add docker to sudo group
+
+   `curl -sSL https://get.docker.com | sh`
+
+   `sudo usermod -aG docker $USER`
 
 6. logout
 
-`sudo reboot`
+   `sudo reboot`
 
 7. add docker to group
+
    `newgrp docker`
-   configure hardware transcoding, add self to render group
+
+8. configure hardware transcoding, add self to render group
    sudo usermod -aG render courtney
    install intel dependencies
    sudo apt install intel-gpu-tools

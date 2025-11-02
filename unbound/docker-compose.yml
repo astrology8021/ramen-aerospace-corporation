@@ -1,0 +1,19 @@
+unbound:
+    container_name: unbound
+    image: klutchell/unbound
+    networks:
+      net:
+        ipv4_address: 172.23.0.2
+    ports:
+      - "5053:53/tcp"
+      - "5053:53/udp"
+    healthcheck:
+      # Use the drill wrapper binary to reduce the exit codes to 0 or 1 for healthchecks
+      test: [ 'CMD', 'drill-hc', '@127.0.0.1', 'dnssec.works' ]
+      interval: 30s
+      timeout: 30s
+      retries: 3
+      start_period: 30s
+    volumes:
+      - ./unbound/config:/etc/unbound/custom.conf.d
+    restart: unless-stopped

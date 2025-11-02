@@ -15,4 +15,9 @@
 
    `pihole setpassword <password>`
 
-vid: https://youtu.be/FUF64UPBq00
+sources:
+
+- https://github.com/pi-hole/docker-pi-hole/
+- https://youtu.be/FUF64UPBq00
+- https://youtu.be/Y3nm519xHfw
+- https://youtu.be/6sznCZ7ttbI

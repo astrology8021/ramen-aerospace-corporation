@@ -31,8 +31,9 @@ My Proxmox install was dying alot and found out this was running an outdated BIO
 
 ### sources
 
+- [M93p and M910q BIOS updates](https://www.reddit.com/r/homelab/comments/hjed0s/m93p_and_m910q_bios_updates/):
+
 > I recently had to update the bios on a m93 sff which uses the same bios as the m93p, >and the iso's didnt work. I had to create a freedos usb using rufus, and copy the >contents of the bios zip file to the usb. I was then able to boot off the usb and >update the bios
 
-- [M93p and M910q BIOS updates](https://www.reddit.com/r/homelab/comments/hjed0s/m93p_and_m910q_bios_updates/)
 - [How to Update Bios Lenovo ThinkCentre M83](https://youtu.be/ZE0ugmZqeFk)
 - BIOS walkthrough: [Lenovo Thinkcentre M93p UEFI BIOS Update - Set UEFI Boot with Secure Boot](https://youtu.be/zmnDsm3GolM?t=488)

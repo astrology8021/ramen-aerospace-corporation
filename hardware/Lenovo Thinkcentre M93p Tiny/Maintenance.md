@@ -20,7 +20,7 @@ My Proxmox install was dying alot and found out this was running an outdated BIO
 7. Make a note/screenshot of the file names, have them ready nearby
 8. Insert USB in the M93p Tiny, press **F12** to bring up the boot menu, select your USB
 9. FreeDOS will prompt you to install, **do not select this**, choose the option to go to DOS
-10. run the command
+10. The basic syntax for flashing using the flash.exe will be:
 
     `flash.exe biosromname.rom \quiet`
 

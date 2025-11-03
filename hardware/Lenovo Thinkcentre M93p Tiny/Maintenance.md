@@ -21,6 +21,7 @@ My Proxmox install was dying alot and found out this was running an outdated BIO
 8. Insert USB in the M93p Tiny, press **F12** to bring up the boot menu, select your USB
 9. FreeDOS will prompt you to install, **do not select this**, choose the option to go to DOS
 10. run the command
+
     `flash.exe biosromname.rom \quiet`
 
 **CHECK NAMES OF THE UNZIPPED FILES** This may be different for other versions/machines, etc., from the "fbjte0usa.zip" bios I used, the contained files were:

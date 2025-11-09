@@ -34,16 +34,24 @@
 # for debian 11 (bullseye)+ disable resolvconf.conf entry for unbound
 
 check if enabled, run
-systemctl is-active unbound-resolvconf.service
+
+`systemctl is-active unbound-resolvconf.service`
+
 disable it
-sudo systemctl disable --now unbound-resolvconf.service
- Disable the file resolvconf_resolvers.conf¶
+
+`sudo systemctl disable --now unbound-resolvconf.service`
+
+Disable the file resolvconf_resolvers.conf¶
 
 Disable the file resolvconf_resolvers.conf from being generated when resolvconf is invoked elsewhere.
-sudo sed -Ei 's/^unbound_conf=/#unbound_conf=/' /etc/resolvconf.conf
-sudo rm /etc/unbound/unbound.conf.d/resolvconf_resolvers.conf
-restart unbound
-sudo service unbound restart
+
+`sudo sed -Ei 's/^unbound_conf=/#unbound_conf=/' /etc/resolvconf.conf`
+
+`sudo rm /etc/unbound/unbound.conf.d/resolvconf_resolvers.conf`
+
+`restart unbound`
+
+`sudo service unbound restart`
 
 #### sources
 

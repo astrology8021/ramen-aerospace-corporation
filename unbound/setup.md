@@ -22,7 +22,14 @@
 
 # Installing via docker
 
-1. use this example
+1. for container volume set to:
+
+```volumes:
+      - ./unbound/config:/opt/unbound/etc/unbound
+```
+
+the unbound.conf file goes in /home/user/unbound/config/unbound.conf, the path in the container is then /opt/unbound/etc/unbound which is what the unbound conf is pointing to
+
 2. when doing dig check, do:
 
    `dig pi-hole.net @127.0.0.1 -p 5053`
@@ -49,7 +56,7 @@ Disable the file resolvconf_resolvers.conf from being generated when resolvconf 
 
 `sudo rm /etc/unbound/unbound.conf.d/resolvconf_resolvers.conf`
 
-`restart unbound`
+restart unbound
 
 `sudo service unbound restart`
 

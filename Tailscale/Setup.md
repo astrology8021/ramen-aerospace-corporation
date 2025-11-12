@@ -96,6 +96,12 @@ go to admin console and disable
 
 https://tailscale.com/kb/1114/pi-hole
 
-# set SSH
+# SSH
+
+## enable
 
 `tailscale set --ssh`
+
+## disable
+
+`tailscale set --ssh=false`

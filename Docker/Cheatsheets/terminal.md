@@ -14,8 +14,9 @@
 
 https://stackoverflow.com/questions/30172605/how-do-i-get-into-a-docker-containers-shell
 
-stop all containers
-docker stop $(docker ps -q)
+## stop all containers
+
+`docker stop $(docker ps -q)`
 
 stop all compose containers
 docker compose stop

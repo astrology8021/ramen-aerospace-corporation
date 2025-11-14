@@ -28,8 +28,11 @@ start all containers in compose
 docker compose up -d
 
 app armor
+
+```
 sudo systemctl enable apparmor --now
 sudo mount -t securityfs none /sys/kernel/security
+```
 
 stop and remove containers, networks, optional volumes/images
 docker compose down

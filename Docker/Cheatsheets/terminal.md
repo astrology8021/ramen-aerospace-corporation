@@ -35,7 +35,7 @@ sudo mount -t securityfs none /sys/kernel/security
 ```
 
 stop and remove containers, networks, optional volumes/images
-docker compose down
+`docker compose down`
 
 pull new image versions from compose
 docker compose pull

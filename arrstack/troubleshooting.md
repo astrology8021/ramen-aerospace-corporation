@@ -84,3 +84,6 @@ auth_basic_user_file ..\.htpasswd;
 #### Other sources
 
 - [Can't access via domain](https://www.reddit.com/r/SABnzbd/comments/1hr6awr/cant_access_via_domain/)
+- [sabnzbd Hostname verification failed](https://www.reddit.com/r/SABnzbd/comments/zxyg8z/sabnzbd_hostname_verification_failed/)
+- [SABnzbd config for reverse proxy](https://www.reddit.com/r/nginxproxymanager/comments/zyp9zu/sabnzbd_config_for_reverse_proxy/)
+- [nginx reverse proxy errors with sabnzbd](https://www.reddit.com/r/usenet/comments/4lbhnx/nginx_reverse_proxy_errors_with_sabnzbd/)

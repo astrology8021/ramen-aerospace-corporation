@@ -13,3 +13,8 @@
 
 5. reboot
    `reboot`
+
+## sources
+
+- https://pve.proxmox.com/wiki/Certificate_Management
+- https://forum.proxmox.com/threads/unable-to-access-web-interface-after-updating-certificate.130831/

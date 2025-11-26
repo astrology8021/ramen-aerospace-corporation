@@ -1,3 +1,7 @@
+# with flaresolverr
+
+- https://youtu.be/LV3mcfqNgcQ
+
 # example composes
 
 - https://github.com/qdm12/gluetun/discussions/485

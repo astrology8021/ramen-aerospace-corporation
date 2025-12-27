@@ -25,4 +25,6 @@ done
 
 ## single file
 
-`ffmpeg -i input.mp4 -vn -acodec copy output.m4a`
+```
+ffmpeg -i input.mp4 -vn -acodec copy output.m4a
+```
